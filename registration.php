@@ -1,4 +1,26 @@
+<?php
+if(isset($_POST['create'])){
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $phonenumber = $_POST['phonenumber'];
+    $password = $_POST['password'];
 
+    if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($phonenumber) && !empty($password) && !is_numeric($firstname) && !is_numeric($lastname) ){
+
+        //save to database
+        $query = "insert into user(firstname,lastname, email, phonenumber, password) values ('$firstname', $lastname, $email, $phonenumber, $password)";
+
+        mysqli_query($query);
+        header("Location:login.php");
+        die;
+    }else{
+
+    echo"Please enter some valid information";
+}
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +33,6 @@
 </head>
 <body>
 
-<div>
-<?php
-if(isset($_POST['create'])){
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $phonenumber = $_POST['phonenumber'];
-    $password = $_POST['password'];
-}
-
-?>
-</div>
 
     <div>
         <form action="registration.php" method="post">
