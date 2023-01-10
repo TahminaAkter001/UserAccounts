@@ -1,5 +1,12 @@
 <?php
-if(isset($_POST['create'])){
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -9,9 +16,9 @@ if(isset($_POST['create'])){
     if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($phonenumber) && !empty($password) && !is_numeric($firstname) && !is_numeric($lastname) ){
 
         //save to database
-        $query = "insert into user(firstname,lastname, email, phonenumber, password) values ('$firstname', $lastname, $email, $phonenumber, $password)";
+        $query = "insert into user (id, firstname, lastname, email, phonenumber, password) values ('$id', '$firstname', '$lastname', '$email', '$phonenumber', '$password')";
 
-        mysqli_query($query);
+        mysqli_query($con,$query);
         header("Location:login.php");
         die;
     }else{
