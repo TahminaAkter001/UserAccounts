@@ -40,6 +40,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body>
 
+<style>
+    a{
+        color:white;
+        text-decoration:none;
+    }
+</style>
 
     <div>
         <form action="registration.php" method="post">
@@ -68,11 +74,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <hr class="mb-3">
 
                 <input class="btn btn-primary" type="submit" name="create" value="Sign Up">
+                <button class="btn btn-primary"><a href="login.php">Login</a></button>
+        
                 </div>
                 </div>
             </div>
         </form>
     </div>
-    
 </body>
 </html>
