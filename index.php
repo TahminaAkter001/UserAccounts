@@ -1,6 +1,3 @@
-<?php
-//$user_data = check_login($con);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Product page</h2>
 </body>
 </html>

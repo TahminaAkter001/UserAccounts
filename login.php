@@ -60,9 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
                 <div class="row">
                     <div >
-                <h1>Login</h1>
-                <p>Enter valid information to login.</p>
-                <hr class="mb-3">
+               
 
                 <label for="email"><b>Email Address</b></label>
                 <input class="form-control" type="email" name="email" require>
@@ -71,8 +69,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <input class="form-control" type="password" name="password" require>
                 <hr class="mb-3">
 
-                <input class="btn btn-success" type="submit" name="create" value="Login">
+                <input class="btn btn-success login_btn " type="submit" name="create" value="Login">
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account? <a href="registration.php" class="ml-2">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="">Forget your password?</a>
+                    </div>
                 </div>
+            </div>
                 </div>
             </div>
         </form>
