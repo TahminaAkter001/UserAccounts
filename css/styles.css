@@ -45,6 +45,6 @@ body,html{
 }
 
 /************index page********/
-.nav-link{
-    color:#fff;
+nav{
+    justify-content: space-between;
 }
