@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order page</title>
+    <title>Complete Your Order</title>
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -46,6 +47,32 @@
   </div>
 </nav>
 
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 mb-5">
+      <h2 class="text-center p-2 text-success">Fill the details to complete your order</h2>
+      <h3>Product Details : </h3>
+      <table class="table-bordered table" width="500px">
+        <tr>
+          <th>Product Name :</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Product Price :</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Product Charge :</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Total Price :</th>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
