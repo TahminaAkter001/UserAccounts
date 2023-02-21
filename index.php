@@ -63,7 +63,7 @@ $result = mysqli_query($con,$sql);
                 <div class="card border-info p-2">
                     <img src="<?= $row['product_image']; ?>" height="320" alt="" class="card-img-top">
                     <h5 class="card-title">Product : <?= $row['product_name']; ?> </h5>
-                    <h3>Price : <?= $row['product_price']; ?>/-</h3>
+                    <h3>Price : <?= number_format($row['product_price']); ?>/-</h3>
                     <a href="order.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-block bln-lg">Buy Now</a>
                 </div>
             </div>

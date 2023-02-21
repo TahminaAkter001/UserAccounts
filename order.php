@@ -1,3 +1,23 @@
+<?php
+include("connection.php");
+if(isset($_GET['id'])){
+  $id = $_GET['id'];
+  $sql ="SELECT * FROM products where id = '$id'";
+  $result = mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($result);
+
+  $p_name        = $row['product_name'];
+  $p_price       = $row['product_price'];
+  $del_charge    = 50;
+  $total_price   = $p_price + $del_charge;
+  $p_image       = $row['product_image'];
+}
+else{
+  echo "no product found!";
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,21 +75,40 @@
       <table class="table-bordered table" width="500px">
         <tr>
           <th>Product Name :</th>
-          <td></td>
+          <td><?= $p_name; ?></td>
+          <td rowspan="4" class="text-center"><img src="<?= $p_image; ?>" width="230" alt=""></td>
         </tr>
         <tr>
           <th>Product Price :</th>
-          <td></td>
+          <td><?= number_format($p_price); ?> /-</td>
         </tr>
         <tr>
           <th>Product Charge :</th>
-          <td></td>
+          <td><?= number_format($del_charge); ?> /-</td>
         </tr>
         <tr>
           <th>Total Price :</th>
-          <td></td>
+          <td><?= number_format($total_price); ?> /-</td>
         </tr>
       </table>
+      <h4>Enter your details :</h4>
+      <form action="pay.php" method="post" accept-charset="utf-8">
+        <input type="hidden" name="product_name" value="<?= $p_name; ?>">
+        <input type="hidden" name="product_price" value="<?= $p_price; ?>">
+        <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="Enter your Name" required><br>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" class="form-control" placeholder="Enter your Email" required><br>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone" required><br>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-danger btn-lg" value="Click to pay : <?= number_format($total_price) ;?> /- ">
+        </div>
+      </form>
+
     </div>
   </div>
 </div>
