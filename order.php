@@ -105,9 +105,10 @@ else{
           <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone" required><br>
         </div>
         <div class="form-group">
-          <input type="submit" class="btn btn-danger btn-lg" value="Click to pay : <?= number_format($total_price) ;?> /- ">
+        <a class="btn btn-danger btn-lg" href="pay.php?price=<?php echo $total_price ?>">Click to pay : <?= number_format($total_price) ;?> /- </a>
         </div>
       </form>
+      
 
     </div>
   </div>
